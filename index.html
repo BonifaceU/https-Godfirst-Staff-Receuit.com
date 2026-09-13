@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teachers Recruitment | God First Comprehensive College Gungul</title>
+<style>
+:root{--green:#075b38;--green2:#087a49;--gold:#e6bd2f;--light:#f4f8f6;--dark:#1f2937;--muted:#667085;--white:#fff;--danger:#b42318}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef4f0;color:var(--dark)}
+.top{background:var(--green);color:#fff;padding:8px;text-align:center;font-size:13px}
+header{background:linear-gradient(135deg,#03492d,#087a49);color:#fff;padding:22px 5%;text-align:center}
+.brand{display:flex;align-items:center;justify-content:center;gap:18px}
+.logo{width:76px;height:100px;border:5px solid var(--gold);border-radius:50%;background:#fff;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:900}
+h1{margin:0;font-size:30px;line-height:1.2}.motto{color:#ffd84d;font-size:18px;font-weight:bold;margin-top:8px}
+nav{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:24px}
+nav button{border:0;border-radius:10px;padding:14px 25px;background:#087a49;color:#fff;font-size:16px;font-weight:bold;cursor:pointer}
+nav button.active,nav button:hover{background:var(--gold);color:#173d2a}
+main{max-width:1150px;margin:28px auto;padding:0 16px}.page{display:none}.page.active{display:block}
+.hero,.card{background:#fff;border-radius:20px;padding:32px;box-shadow:0 5px 22px #00000012;margin-bottom:22px}
+.hero{text-align:center}.hero h2{color:var(--green);font-size:36px;margin:10px 0}.hero p{font-size:18px;line-height:1.8;max-width:800px;margin:15px auto}
+.notice{background:#edf8f1;border-left:5px solid var(--green);padding:15px;margin:18px 0;border-radius:8px}
+.btn{border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer;margin:4px}.primary{background:var(--green);color:#fff}.gold{background:var(--gold);color:#173d2a}.secondary{background:#667085;color:#fff}.danger{background:var(--danger);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.full{grid-column:1/-1}
+label{display:block;font-weight:bold;margin-bottom:7px}input,select,textarea{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:8px;font-size:15px;background:#fff}textarea{min-height:100px;resize:vertical}
+.filebox{border:1px dashed #8ebba3;padding:15px;border-radius:8px;background:#f8fbf9}.small{font-size:12px;color:var(--muted)}
+.status{padding:13px;border-radius:8px;margin-top:15px;display:none}.success{display:block;background:#ecfdf3;color:#067647}.error{display:block;background:#fef3f2;color:#b42318}
+.result{background:#f8faf9;border-radius:12px;padding:20px;margin-top:18px}.result h3{color:var(--green)}
+table{width:100%;border-collapse:collapse;min-width:1000px}th{background:var(--green);color:#fff;padding:11px;text-align:left}td{padding:10px;border-bottom:1px solid #eaecf0} .tablewrap{overflow:auto}
+footer{background:#103b25;color:#fff;text-align:center;padding:18px;margin-top:35px}
+@media(max-width:700px){h1{font-size:22px}.motto{font-size:14px}.hero h2{font-size:28px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.brand{flex-direction:column}.logo{width:65px;height:85px}}
+</style>
+</head>
+<body>
+<div class="top">WELCOME TO GOD FIRST COMPREHENSIVE COLLEGE, GUNGUL — TEACHERS RECRUITMENT PORTAL</div>
+<header>
+  <div class="brand">
+    <div class="logo">GF</div>
+    <div>
+      <h1>GOD FIRST COMPREHENSIVE COLLEGE GUNGUL</h1>
+      <div class="motto">HOLD UNTO GOD FOR ALL EXCELLENCE</div>
+    </div>
+  </div>
+  <nav>
+    <button class="active" onclick="showPage('home',this)">Home</button>
+    <button onclick="showPage('apply',this)">Apply Now</button>
+    <button onclick="showPage('check',this)">Check Application</button>
+    <button onclick="showPage('admin',this)">Admin</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <h2>TEACHERS RECRUITMENT<br>APPLICATION PORTAL</h2>
+    <h3>GOD FIRST COMPREHENSIVE COLLEGE GUNGUL</h3>
+    <p>Welcome to the official Teachers Recruitment Application Portal. Qualified and interested candidates are invited to submit applications for available teaching positions.</p>
+    <div class="notice"><strong>Important:</strong> Complete all required fields and upload clear copies of your documents before submitting.</div>
+    <button class="btn gold" onclick="showPage('apply')">START APPLICATION</button>
+  </div>
+  <div class="card">
+    <h3>Required documents</h3>
+    <ul>
+      <li>Recent passport photograph</li>
+      <li>Curriculum Vitae (CV)</li>
+      <li>Highest academic certificate</li>
+      <li>Relevant teaching/professional certificates</li>
+      <li>Valid means of identification</li>
+      <li>Other supporting documents, where applicable</li>
+    </ul>
+  </div>
+</section>
+
+<section id="apply" class="page">
+<div class="card">
+<h2>Teachers Recruitment Application Form</h2>
+<p class="small">All applications are stored centrally in one Google Sheet. Do not refresh while documents are uploading.</p>
+<form id="applicationForm">
+<div class="grid">
+<div><label>First Name *</label><input id="firstName" required></div>
+<div><label>Middle Name</label><input id="middleName"></div>
+<div><label>Surname *</label><input id="surname" required></div>
+<div><label>Gender *</label><select id="gender" required><option value="">Select</option><option>Male</option><option>Female</option></select></div>
+<div><label>Date of Birth</label><input type="date" id="dob"></div>
+<div><label>Phone Number *</label><input id="phone" required></div>
+<div><label>Email Address *</label><input type="email" id="email" required></div>
+<div><label>Position Applied For *</label><select id="position" required><option value="">Select position</option><option>Class Teacher</option><option>Subject Teacher</option><option>Basic Science Teacher</option><option>Biology Teacher</option><option>Chemistry Teacher</option><option>Physics Teacher</option><option>Mathematics Teacher</option><option>English Language Teacher</option><option>Computer/ICT Teacher</option><option>Python/Programming Instructor</option><option>Other</option></select></div>
+<div><label>Teaching Subject / Area *</label><input id="subject" required placeholder="e.g. Biology, Mathematics, ICT"></div>
+<div><label>Highest Qualification *</label><select id="qualification" required><option value="">Select</option><option>SSCE/WAEC/NECO</option><option>OND</option><option>NCE</option><option>HND</option><option>B.Sc.</option><option>B.A.</option><option>B.Ed.</option><option>M.Sc.</option><option>M.Ed.</option><option>Other</option></select></div>
+<div><label>Field of Study *</label><input id="field" required></div>
+<div><label>Institution Attended *</label><input id="institution" required></div>
+<div><label>Graduation Year</label><input id="graduationYear" type="number" min="1950" max="2100"></div>
+<div><label>Years of Teaching Experience</label><input id="experience" type="number" min="0" max="60"></div>
+<div class="full"><label>Programming / Digital Skills</label><input id="skills" value="HTML, CSS, JavaScript, Python" placeholder="e.g. HTML, CSS, JavaScript, Python"></div>
+<div class="full"><label>Address *</label><textarea id="address" required></textarea></div>
+<div class="full"><label>Teaching / Professional Experience</label><textarea id="professionalExperience" placeholder="Briefly describe your relevant experience"></textarea></div>
+
+<div class="full filebox">
+<label>Passport Photograph * (image, max 3 MB)</label>
+<input type="file" id="passport" accept="image/*" required>
+</div>
+<div class="full filebox">
+<label>CV / Curriculum Vitae * (PDF/DOC/DOCX, max 5 MB)</label>
+<input type="file" id="cv" accept=".pdf,.doc,.docx" required>
+</div>
+<div class="full filebox">
+<label>Highest Academic Certificate * (PDF/image, max 5 MB)</label>
+<input type="file" id="certificate" accept=".pdf,image/*" required>
+</div>
+<div class="full filebox">
+<label>Professional / Teaching Certificate (optional)</label>
+<input type="file" id="professionalCertificate" accept=".pdf,image/*">
+</div>
+<div class="full filebox">
+<label>Valid ID (optional)</label>
+<input type="file" id="idDocument" accept=".pdf,image/*">
+</div>
+<div class="full filebox">
+<label>Other Supporting Document (optional)</label>
+<input type="file" id="otherDocument" accept=".pdf,image/*,.doc,.docx">
+</div>
+</div>
+<div id="formStatus" class="status"></div>
+<button class="btn primary" type="submit" id="submitBtn">SUBMIT APPLICATION</button>
+<button class="btn secondary" type="reset">CLEAR</button>
+</form>
+</div>
+</section>
+
+<section id="check" class="page">
+<div class="card">
+<h2>Check Application Status</h2>
+<p>Enter your Application ID and the email address used during registration.</p>
+<div class="grid">
+<div><label>Application ID</label><input id="checkId" placeholder="GFCC-2026-0001"></div>
+<div><label>Email</label><input id="checkEmail" type="email"></div>
+</div>
+<button class="btn primary" onclick="checkApplication()">CHECK APPLICATION</button>
+<div id="checkResult"></div>
+</div>
+</section>
+
+<section id="admin" class="page">
+<div class="card" id="adminLogin">
+<h2>Administrator Access</h2>
+<p>Enter the administrator password configured in <b>Code.gs</b>.</p>
+<input id="adminPassword" type="password" placeholder="Admin password">
+<button class="btn primary" onclick="adminLoginAction()">LOGIN</button>
+<div id="adminStatus" class="status"></div>
+</div>
+<div class="card" id="adminPanel" style="display:none">
+<h2>Recruitment Database</h2>
+<p class="small">All applicants are stored in the same Google Sheet.</p>
+<button class="btn secondary" onclick="loadAdminApplications()">Refresh</button>
+<div class="tablewrap"><table><thead><tr>
+<th>Application ID</th><th>Date</th><th>Name</th><th>Phone</th><th>Email</th><th>Position</th><th>Subject</th><th>Qualification</th><th>Status</th><th>Action</th>
+</tr></thead><tbody id="adminTable"></tbody></table></div>
+</div>
+</section>
+</main>
+
+<footer>God First Comprehensive College Gungul | Hold Unto God For All Excellence | Teachers Recruitment Portal</footer>
+
+<script>
+let adminPassword = "";
+function showPage(id,btn){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ if(btn) btn.classList.add('active');
+ window.scrollTo(0,0);
+}
+function setStatus(id,msg,ok){
+ const e=document.getElementById(id); e.textContent=msg; e.className='status '+(ok?'success':'error');
+}
+function readFile(input){
+ return new Promise((resolve,reject)=>{
+   const f=input.files[0];
+   if(!f){resolve(null);return}
+   const max = input.id==='passport' ? 3*1024*1024 : 5*1024*1024;
+   if(f.size>max){reject(new Error(f.name+' is larger than the allowed size.'));return}
+   const r=new FileReader();
+   r.onload=()=>resolve({name:f.name,type:f.type,size:f.size,data:r.result});
+   r.onerror=()=>reject(new Error('Could not read '+f.name));
+   r.readAsDataURL(f);
+ });
+}
+async function submitApplication(e){
+ e.preventDefault();
+ const btn=document.getElementById('submitBtn'); btn.disabled=true; btn.textContent='UPLOADING...';
+ setStatus('formStatus','Preparing application...',true);
+ try{
+   const files={};
+   for(const id of ['passport','cv','certificate','professionalCertificate','idDocument','otherDocument']){
+     files[id]=await readFile(document.getElementById(id));
+   }
+   const data={
+     firstName:document.getElementById('firstName').value.trim(),
+     middleName:document.getElementById('middleName').value.trim(),
+     surname:document.getElementById('surname').value.trim(),
+     gender:document.getElementById('gender').value,
+     dob:document.getElementById('dob').value,
+     phone:document.getElementById('phone').value.trim(),
+     email:document.getElementById('email').value.trim(),
+     position:document.getElementById('position').value,
+     subject:document.getElementById('subject').value.trim(),
+     qualification:document.getElementById('qualification').value,
+     field:document.getElementById('field').value.trim(),
+     institution:document.getElementById('institution').value.trim(),
+     graduationYear:document.getElementById('graduationYear').value,
+     experience:document.getElementById('experience').value,
+     skills:document.getElementById('skills').value.trim(),
+     address:document.getElementById('address').value.trim(),
+     professionalExperience:document.getElementById('professionalExperience').value.trim(),
+     files:files
+   };
+   google.script.run.withSuccessHandler(res=>{
+      btn.disabled=false;btn.textContent='SUBMIT APPLICATION';
+      if(res.ok){
+        setStatus('formStatus','Application submitted successfully. Your Application ID is '+res.applicationId,true);
+        alert('Application submitted successfully. Application ID: '+res.applicationId);
+        document.getElementById('applicationForm').reset();
+      }else setStatus('formStatus',res.message,false);
+   }).withFailureHandler(err=>{
+      btn.disabled=false;btn.textContent='SUBMIT APPLICATION';
+      setStatus('formStatus',err.message||'Submission failed.',false);
+   }).submitApplication(data);
+ }catch(err){btn.disabled=false;btn.textContent='SUBMIT APPLICATION';setStatus('formStatus',err.message,false)}
+}
+document.getElementById('applicationForm').addEventListener('submit',submitApplication);
+
+function checkApplication(){
+ const id=document.getElementById('checkId').value.trim();
+ const email=document.getElementById('checkEmail').value.trim();
+ if(!id||!email){document.getElementById('checkResult').innerHTML='<div class="status error">Enter Application ID and email.</div>';return}
+ google.script.run.withSuccessHandler(r=>{
+   if(!r.found){document.getElementById('checkResult').innerHTML='<div class="status error">Application not found. Check your ID and email.</div>';return}
+   document.getElementById('checkResult').innerHTML='<div class="result"><h3>Application Found</h3><p><b>Application ID:</b> '+esc(r.applicationId)+'</p><p><b>Name:</b> '+esc(r.name)+'</p><p><b>Position:</b> '+esc(r.position)+'</p><p><b>Subject:</b> '+esc(r.subject)+'</p><p><b>Status:</b> '+esc(r.status)+'</p><p><b>Date Submitted:</b> '+esc(r.date)+'</p></div>';
+ }).withFailureHandler(err=>{
+   document.getElementById('checkResult').innerHTML='<div class="status error">'+esc(err.message)+'</div>';
+ }).checkApplication(id,email);
+}
+function adminLoginAction(){
+ adminPassword=document.getElementById('adminPassword').value;
+ google.script.run.withSuccessHandler(r=>{
+   if(r.ok){document.getElementById('adminLogin').style.display='none';document.getElementById('adminPanel').style.display='block';loadAdminApplications()}
+   else setStatus('adminStatus','Incorrect password.',false);
+ }).verifyAdmin(adminPassword);
+}
+function loadAdminApplications(){
+ google.script.run.withSuccessHandler(rows=>{
+   document.getElementById('adminTable').innerHTML=rows.map(r=>`<tr>
+   <td>${esc(r.id)}</td><td>${esc(r.date)}</td><td>${esc(r.name)}</td><td>${esc(r.phone)}</td><td>${esc(r.email)}</td>
+   <td>${esc(r.position)}</td><td>${esc(r.subject)}</td><td>${esc(r.qualification)}</td><td>${esc(r.status)}</td>
+   <td><button class="btn gold" onclick="changeStatus('${escAttr(r.id)}')">Update</button></td></tr>`).join('');
+ }).getApplications(adminPassword);
+}
+function changeStatus(id){
+ const s=prompt('Enter new status (Submitted, Shortlisted, Interview, Selected, Rejected):','Submitted');
+ if(!s)return;
+ const remark=prompt('Optional admin remark:','');
+ google.script.run.withSuccessHandler(r=>{alert(r.message);loadAdminApplications()}).updateApplicationStatus(adminPassword,id,s,remark||'');
+}
+function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function escAttr(x){return String(x??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
+</script>
+</body>
+</html>
